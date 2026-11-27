@@ -11,7 +11,7 @@ WITNESSES = [(114514,7,1,1,6),(114514,19,3,5,12),
              (114514,317,1,128,265),(364364,5,2,2,0)]
 
 def valid(n,p,a,b,c):
-    return all((a,b,c)) and gcd(a,b)==gcd(b,c)==gcd(c,a)==1 and a**p+b**p+c**p==n
+    return p>=5 and is_prime(p) and all((a,b,c)) and gcd(a,b)==gcd(b,c)==gcd(c,a)==1 and a**p+b**p+c**p==n
 
 def obstruction(n,p,q):
     r = subgroup_residues(p,q)
@@ -39,6 +39,28 @@ def small(n,p):
 
 def search(n,p,bound):
     for x in range(p+1,bound+1):
+        # For x>p the two largest bases have opposite signs:
+        # 3 distinct magnitudes imply z >= x+2, and z**p > n
+        # except possibly p=5, x=6..10. Check that finite region.
+        z=x+2
+        while z**p<=n:
+            for y in range(x+1,z):
+                for signs in ((1,1,1),(-1,1,1)):
+                    a,b,c=signs[0]*x,y,z
+                    if valid(n,p,a,b,c):
+                        return (p,a,b,c)
+            z+=1
+        # If the smallest term dominates the difference of the larger
+        # magnitudes, t=x**p-n may be negative; the +N case below
+        # also covers z positive, y negative, x negative.
+        # z positive, y negative, x positive requires gap=N-x**p.
+        t=n-x**p
+        if t>0:
+            for d in range(1,t//(p*(x+1)**(p-1))+1):
+                if t%d==0:
+                    y=find_y(p,x,d,t)
+                    if y is not None and valid(n,p,x,-y,y+d):
+                        return (p,x,-y,y+d)
         for s in (-1,1):
             t=x**p+s*n
             if t<=0:
