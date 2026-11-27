@@ -1,0 +1,12 @@
+364364 p=5 sign=-1 B=10000000 x_min=18 candidates=173406705 passed=0 filters=30
+364364 p=5 sign=1 B=10000000 x_min=18 candidates=173404280 passed=0 filters=30
+114514 p=7 sign=-1 B=10000000 x_min=8 candidates=107346534 passed=0 filters=30
+114514 p=7 sign=1 B=10000000 x_min=8 candidates=107347215 passed=0 filters=30
+114514 p=19 sign=-1 B=10000000 x_min=20 candidates=97632033 passed=0 filters=30
+114514 p=19 sign=1 B=10000000 x_min=20 candidates=97633091 passed=0 filters=30
+114514 p=31 sign=-1 B=10000000 x_min=32 candidates=94694545 passed=0 filters=30
+114514 p=31 sign=1 B=10000000 x_min=32 candidates=94695001 passed=0 filters=30
+114514 p=67 sign=-1 B=10000000 x_min=68 candidates=89251481 passed=0 filters=29
+114514 p=67 sign=1 B=10000000 x_min=68 candidates=89251829 passed=0 filters=29
+114514 p=317 sign=-1 B=10000000 x_min=318 candidates=77958471 passed=0 filters=28
+114514 p=317 sign=1 B=10000000 x_min=318 candidates=77958429 passed=0 filters=28
