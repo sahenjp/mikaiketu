@@ -18,6 +18,8 @@ gcd(a,b) = gcd(b,c) = gcd(c,a) = 1
 - [1000万までの最小底排除・再現手順・実行ログ](research/minimum-base/README.md)
 - [固定差の超楕円型曲線への帰着・重根不存在・p=5の種数2曲線](docs/gap-curves.md)
 
+- [符号付き和による約数・判別式への帰着](docs/pair-sums.md) — 全素数指数の因数分解、5乗の厳密固定和探索（[Python](scripts/pair_sum.py)）
+
 ## 研究資料
 
 以下の旧実装・コマンドは主に 114514 専用。
