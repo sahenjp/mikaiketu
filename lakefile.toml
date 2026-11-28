@@ -1,6 +1,6 @@
 name = "mikaiketu"
 version = "0.1.0"
-defaultTargets = ["Problem114514"]
+defaultTargets = ["Problem114514", "TwoTargets"]
 
 [[lean_lib]]
 name = "Problem114514"
@@ -9,3 +9,6 @@ name = "Problem114514"
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"
 rev = "v4.19.0"
+
+[[lean_lib]]
+name = "TwoTargets"
